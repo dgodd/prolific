@@ -1,0 +1,13 @@
+name: prolific
+version: 0.1.0
+
+authors:
+  - Dave Goddard <dave@goddard.id.au>
+
+targets:
+  prolific:
+    main: src/prolific.cr
+
+crystal: 0.20.5
+
+license: MIT
