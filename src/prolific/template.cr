@@ -1,5 +1,5 @@
 module Prolific
-TEMPLATE="As a user I can toast a bagel
+  TEMPLATE = "As a user I can toast a bagel
 When I insert a bagel into toaster and press the on button, I should get a toasted bagel
 L: mvp, toasting
 ---

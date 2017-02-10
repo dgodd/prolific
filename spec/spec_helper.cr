@@ -4,7 +4,7 @@ require "tempfile"
 require "csv"
 
 def chtmpdir
-  path = Tempfile.new("template").tap{|tmp|tmp.unlink}.path
+  path = Tempfile.new("template").tap { |tmp| tmp.unlink }.path
   Dir.mkdir_p(path)
   Dir.cd(path) do
     yield

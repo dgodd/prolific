@@ -9,6 +9,7 @@ module Prolific
     def type_title
       "[#{type.upcase}] #{title}"
     end
+
     def type_title=(line)
       if line =~ /^\[(.*?)\]\s*(.*)/
         self.type = $1.downcase
@@ -32,14 +33,14 @@ module Prolific
       end
     end
 
-    def initialize()
+    def initialize
     end
 
     def initialize(lines : Array(String))
       lines.each do |line|
         parse(line)
       end
-      self.description = description.gsub(/\n\n\n+/,"\n\n").gsub(/[\s\n]+$/,"")
+      self.description = description.gsub(/\n\n\n+/, "\n\n").gsub(/[\s\n]+$/, "")
     end
   end
 end

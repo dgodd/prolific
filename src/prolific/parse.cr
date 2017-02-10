@@ -12,7 +12,7 @@ module Prolific
 
   def self.write_csv(io, stories : Array(Story))
     CSV.build(io) do |csv|
-      max_tasks = stories.map{|s|s.tasks.size}.max
+      max_tasks = stories.map { |s| s.tasks.size }.max
       csv.row(["Title", "Type", "Description", "Labels"] + (["Task"] * max_tasks))
       stories.each do |story|
         csv.row([

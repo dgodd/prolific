@@ -1,5 +1,5 @@
 module Prolific
-USAGE="prolific v2.8
+  USAGE = "prolific v2.8
 Usage:
     prolific [FILE]
         Converts the prolific file FILE to a CSV printed to stdout.
