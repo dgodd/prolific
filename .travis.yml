@@ -1,3 +1,13 @@
 language: crystal
 crystal:
-  - latest
+- latest
+before_deploy: crystal build -o prolific.linux src/prolific.cr
+deploy:
+  provider: releases
+  api_key:
+    secure: cgQ3Mhd23fuB/JAwJwL1aMVfcJmy43/zjfEonPoU/hdY8ntjBBtkfxh9RUpYBm5CufL/YQbO8Iif8TtqNdOYlT7AqnpfumoZfn+F6OGs6CpcxOK4r3T3IkbG2vboLshIrKfMU7VAJ1p7Dr6nPqD71Y2Vxvc88WPaeTpu8Cm4i01TXa2ZnblgGidLPNxsgRsT5/+Y6B8J4aF8QtXyLYkiyWCT76JnwRb6+n9Fy72pPV4Bmu8CKH1jvwOfTrnOWgZp7YSWQGqZEqQTO4dSitJV3X5vHoFgeYpL8gvp70AYEA3sQkRHtje/SU+pXQTjZibHzfC+/4zcFB4jl8FMqBWEC76mx57OLLZUQ4/qXvkKlOfrOKv8rpDgKWYLSdJ65vXVqpwsheJUW5q5jTb2APMz/NcxX3Pb58x6DVbTpbedcsYKP9oMRl8sC7RF+zIH4EOhpi9nsEE7Ayz4LIJ9Yu6wRX6Brs2JnK+C8/vRvJjeexTqXfM57hOTvS9VyT94dXsvMjgIrJll/zvzO/zt7y6Z0vm8rnPpyHCOLS/mUvkGbEA48vi61cJqPIfFVm6JgZ0wRhaFtrHEOZe6+OXt23zh8BRuWup/tjHRsyzb6Qm6+ssXesCxLIvRM40sRzCodJnkn4jW3X6Ixdb8+ouxiF+c52PavuV5+aWrtWik6ZXNsyw=
+  file:
+  - "prolific.linux"
+  on:
+    repo: dgodd/prolific
+    tags: true
