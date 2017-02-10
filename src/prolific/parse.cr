@@ -1,4 +1,5 @@
 require "./story"
+require "csv"
 
 module Prolific
   def self.parse(file)
@@ -7,6 +8,21 @@ module Prolific
       stories << Story.new(lines)
     end
     stories
+  end
+
+  def self.write_csv(io, stories : Array(Story))
+    CSV.build(io) do |csv|
+      max_tasks = stories.map{|s|s.tasks.size}.max
+      csv.row(["Title", "Type", "Description", "Labels"] + (["Task"] * max_tasks))
+      stories.each do |story|
+        csv.row([
+          story.title,
+          story.type,
+          story.description,
+          story.labels.join(","),
+        ] + story.tasks)
+      end
+    end
   end
 
   private def self.each_group(file)

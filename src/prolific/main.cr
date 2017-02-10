@@ -16,10 +16,10 @@ module Prolific
         f.puts TEMPLATE
       end
     when "-"
-      parse(stdin)
+      write_csv(stdout, parse(stdin))
     else
       File.open(argv[0]) do |f|
-        parse(f)
+        write_csv(stdout, parse(f))
       end
     end
   end
