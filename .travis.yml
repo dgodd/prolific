@@ -10,4 +10,3 @@ deploy:
   - "prolific.linux"
   on:
     repo: dgodd/prolific
-    tags: true
