@@ -1,22 +1,38 @@
 # prolific
 
-TODO: Write a description here
+It's like Markdown for Pivotal Tracker
 
-## Installation
-
-TODO: Write installation instructions here
+This is a reimplementation of [Onsi's prolific](https://github.com/onsi/prolific) in crystal
 
 ## Usage
 
-TODO: Write usage instructions here
+Build
+
+```
+crystal build src/prolific.cr
+```
+
+Run
+
+```
+./prolific help
+```
+or
+```
+./prolific - < stories.prolific > stories.csv
+```
 
 ## Development
 
-TODO: Write development instructions here
+Edit the specs and implementation, then
+
+```
+crystal spec
+```
 
 ## Contributing
 
-1. Fork it ( https://github.com/[your-github-name]/prolific/fork )
+1. Fork it ( https://github.com/dgodd/prolific/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -24,5 +40,8 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [[your-github-name]](https://github.com/[your-github-name])  - creator, maintainer
-# prolific
+- [[dgodd]](https://github.com/dgodd)  - creator, maintainer
+
+## Thanks
+
+- [[onsi]](https://github.com/onsi/prolific) - inspiration
