@@ -56,7 +56,7 @@ describe Prolific do
     it "parses input csv file" do
       stdin = IO::Memory.new(1024)
       stdout = IO::Memory.new(1024)
-      Prolific.main(["spec/fixtures/project_20170211_1212.csv"] of String, stdin, stdout)
+      Prolific.main(["spec/fixtures/stories.csv"] of String, stdin, stdout)
 
       stdout.to_s.should contain "---\n[CHORE] Reticulate the Toaster's turboencabulator"
     end

@@ -16,14 +16,14 @@ module Prolific
         f.puts TEMPLATE
       end
     when "-"
-      write_csv(stdout, parse(stdin))
+      Writer.csv(stdout, Reader.prolific(stdin))
     when /\.csv$/
       File.open(argv[0]) do |f|
-        Writer.prolific(stdout, FromCSV.parse(f))
+        Writer.prolific(stdout, Reader.csv(f))
       end
     else
       File.open(argv[0]) do |f|
-        write_csv(stdout, parse(f))
+        Writer.csv(stdout, Reader.prolific(f))
       end
     end
   end

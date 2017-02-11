@@ -4,6 +4,11 @@ It's like Markdown for Pivotal Tracker
 
 This is a reimplementation of [Onsi's prolific](https://github.com/onsi/prolific) in crystal
 
+## Extra functionality
+
+This version enables conversion in **both** directions, eg. from prolific -> csv
+and from csv -> prolific.
+
 ## Usage
 
 Build

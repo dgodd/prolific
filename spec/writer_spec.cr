@@ -1,6 +1,19 @@
 require "./spec_helper"
 
 describe Prolific::Writer do
+  describe ".csv" do
+    story = Prolific::Story.new
+    story.type = "chore"
+    story.title = "Eat Bacon"
+    story.description = "Bacon is\ntoo prevalent"
+    story.tasks = ["grab","eat"]
+    story.labels = ["mvp","easy"]
+
+    io = IO::Memory.new
+    Prolific::Writer.csv(io, [story])
+    io.to_s.should eq "Title,Type,Description,Labels,Task,Task\nEat Bacon,chore,\"Bacon is\ntoo prevalent\",\"mvp,easy\",grab,eat\n"
+  end
+
   describe ".prolific" do
     it "outputs type and title" do
       story = Prolific::Story.new
