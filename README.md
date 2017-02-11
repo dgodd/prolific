@@ -4,6 +4,8 @@ It's like Markdown for Pivotal Tracker
 
 This is a reimplementation of [Onsi's prolific](https://github.com/onsi/prolific) in crystal
 
+[![Build Status](https://travis-ci.org/dgodd/prolific.svg?branch=master)](https://travis-ci.org/dgodd/prolific)
+
 ## Extra functionality
 
 This version enables conversion in **both** directions, eg. from prolific -> csv
