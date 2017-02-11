@@ -29,6 +29,13 @@ or any of
 ./prolific stories.csv > stories.prolific
 ```
 
+### Release
+
+To build releases on macosx run:
+
+macos: `crystal build --release src/prolific.cr -o prolific.macosx`
+linux: `docker run -w /app -v $PWD:/app -it crystallang/crystal crystal build --release src/prolific.cr -o prolific.linux`
+
 ## Development
 
 Edit the specs and implementation, then
