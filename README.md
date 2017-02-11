@@ -17,9 +17,11 @@ Run
 ```
 ./prolific help
 ```
-or
+or any of
 ```
 ./prolific - < stories.prolific > stories.csv
+./prolific stories.prolific > stories.csv
+./prolific stories.csv > stories.prolific
 ```
 
 ## Development

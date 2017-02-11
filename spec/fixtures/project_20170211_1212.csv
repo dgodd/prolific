@@ -1,0 +1,8 @@
+Id,Title,Labels,Iteration,Iteration Start,Iteration End,Type,Estimate,Current State,Created at,Accepted at,Deadline,Requested By,Description,URL,Owned By,Task,Task Status,Task,Task Status,Task,Task Status
+139619399,As a user I can toast a bagel,"mvp, toasting",,,,feature,,unscheduled,"Feb 11, 2017",,,Dave Goddard,"When I insert a bagel into toaster and press the on button, I should get a toasted bagel",https://www.pivotaltracker.com/story/show/139619399,
+139619401,As a user I can set the desired color of my bagel,"mvp, toasting",,,,feature,,unscheduled,"Feb 11, 2017",,,Dave Goddard,"I should be able to manipulate a dial and choose one of:
+Pressing the on button gives me toast of the appropriate color.",https://www.pivotaltracker.com/story/show/139619401,,light,not completed,medium,not completed,dark,not completed
+139619403,As a user I can clean my bagel toaster,"clean-up, mvp",,,,feature,,unscheduled,"Feb 11, 2017",,,Dave Goddard,I should be able to pull out a tray and clean up the crumbs.,https://www.pivotaltracker.com/story/show/139619403,
+139619405,"Every third time I use it, the toaster jams",mvp,,,,bug,,unscheduled,"Feb 11, 2017",,,Dave Goddard,,https://www.pivotaltracker.com/story/show/139619405,
+139619407,Reticulate the Toaster's turboencabulator,"",,,,chore,,unscheduled,"Feb 11, 2017",,,Dave Goddard,A metabolic endocrinide that the developrs will likely need to photoencapsulate.,https://www.pivotaltracker.com/story/show/139619407,,Re-enfarbulate the mitilandrinide,not completed,Masticulate the retracto-mandible,not completed,Effervesce all enteropolycarbides,not completed
+139619409,Toaster MVP is Ready,mvp,,,,release,,unscheduled,"Feb 11, 2017",,,Dave Goddard,,https://www.pivotaltracker.com/story/show/139619409,

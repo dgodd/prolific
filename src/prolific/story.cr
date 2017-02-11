@@ -7,6 +7,7 @@ module Prolific
     property tasks = [] of String
 
     def type_title
+      return title if type == "" || type == "feature"
       "[#{type.upcase}] #{title}"
     end
 
@@ -25,7 +26,7 @@ module Prolific
       case line
       when /^L:\s*(.*)/
         self.labels += $1.split(/,\s*/)
-      when /^[-*](?:\s*\[\s*\])?\s*(.*)/
+      when /^- \[ \]\s*(.*)/
         self.tasks += [$1]
       else
         self.description += "\n" if self.description != ""

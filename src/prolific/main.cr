@@ -17,6 +17,10 @@ module Prolific
       end
     when "-"
       write_csv(stdout, parse(stdin))
+    when /\.csv$/
+      File.open(argv[0]) do |f|
+        Writer.prolific(stdout, FromCSV.parse(f))
+      end
     else
       File.open(argv[0]) do |f|
         write_csv(stdout, parse(f))

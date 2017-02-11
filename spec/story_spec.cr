@@ -8,6 +8,11 @@ describe Prolific::Story do
       story.title = "Reticulate the Toaster's turboencabulator"
       story.type_title.should eq "[CHORE] Reticulate the Toaster's turboencabulator"
     end
+    it "given only title" do
+      story = Prolific::Story.new
+      story.title = "Reticulate the Toaster's turboencabulator"
+      story.type_title.should eq "Reticulate the Toaster's turboencabulator"
+    end
   end
 
   describe "#chore_title=" do
@@ -34,6 +39,12 @@ describe Prolific::Story do
 
       story.parse("and press the on button")
       story.description.should eq "When I insert a bagel into toaster\nand press the on button"
+
+      story.parse("- Toast a bagel")
+      story.description.should eq "When I insert a bagel into toaster\nand press the on button\n- Toast a bagel"
+
+      story.parse("* Spread cheese")
+      story.description.should eq "When I insert a bagel into toaster\nand press the on button\n- Toast a bagel\n* Spread cheese"
     end
     it "handles labels" do
       story = Prolific::Story.new
@@ -45,36 +56,33 @@ describe Prolific::Story do
       story = Prolific::Story.new
       story.title = "Something"
 
-      story.parse("- Toast a bagel")
-      story.tasks.should eq ["Toast a bagel"]
-
-      story.parse("* Spread cheese")
-      story.tasks.should eq ["Toast a bagel", "Spread cheese"]
+      story.parse("- [ ] Spread cheese")
+      story.tasks.should eq ["Spread cheese"]
 
       story.parse("- [ ] Eat bagel")
-      story.tasks.should eq ["Toast a bagel", "Spread cheese", "Eat bagel"]
+      story.tasks.should eq ["Spread cheese", "Eat bagel"]
     end
   end
 
   describe "initialize" do
     it "handles complex example" do
       story = Prolific::Story.new("
-[CHORE] Reticulate the Toaster's turboencabulator
+[CHORE] As a user I can set the desired color of my bagel
+I should be able to manipulate a dial and choose one of:
+- light
+- dark
+Pressing the on button gives me toast of the appropriate color.
 
-A metabolic endocrinide that
+- [ ] Add dial to page
+- [ ] make dial work
 
-- Re-enfarbulate the mitilandrinide
-- Masticulate the retracto-mandible
-
-the developrs will likely need to photoencapsulate.
-
-L: mvp
+L: mvp, toasting
       ".split(/\n/))
       story.type.should eq "chore"
-      story.title.should eq "Reticulate the Toaster's turboencabulator"
-      story.description.should eq "A metabolic endocrinide that\n\nthe developrs will likely need to photoencapsulate."
-      story.tasks.should eq ["Re-enfarbulate the mitilandrinide", "Masticulate the retracto-mandible"]
-      story.labels.should eq ["mvp"]
+      story.title.should eq "As a user I can set the desired color of my bagel"
+      story.description.should eq "I should be able to manipulate a dial and choose one of:\n- light\n- dark\nPressing the on button gives me toast of the appropriate color."
+      story.tasks.should eq ["Add dial to page", "make dial work"]
+      story.labels.should eq ["mvp", "toasting"]
     end
   end
 end
